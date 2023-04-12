@@ -51,8 +51,8 @@
 [参考文档 2 CF_BUILDPACK_URL](https://github.com/mendix/docker-mendix-buildpack/blob/cfd29123e7579aaec96f163deafc8304e4b649e6/Dockerfile#L16)
 
 ```cmd
-docker build --build-arg CF_BUILDPACK_URL=http://{your ip}:8000/cf-mendix-buildpack/${CF_BUILDPACK}/cf-mendix-buildpack.zip
---build-arg BLOBSTORE=http://{your ip}:8000/mendix/
+docker build --build-arg CF_BUILDPACK_URL=http://127.0.0.1:5000/github/mendix/cf-mendix-buildpack/releases/download/v4.30.17/cf-mendix-buildpack.zip
+--build-arg BLOBSTORE=http://127.0.0.1:5000/mendix/
 ```
 
 # QA
