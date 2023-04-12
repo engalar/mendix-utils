@@ -54,3 +54,8 @@
 docker build --build-arg CF_BUILDPACK_URL=http://{your ip}:8000/cf-mendix-buildpack/${CF_BUILDPACK}/cf-mendix-buildpack.zip
 --build-arg BLOBSTORE=http://{your ip}:8000/mendix/
 ```
+
+# QA
+- #17 50.85 requests.exceptions.HTTPError: 404 Client Error: File not found for url: http://192.168.1.2:8000/mendix/mx-buildpack/Adoptium-jdk-11.0.16-linux-x64.tar.gz
+
+说明缺少 `mx-buildpack/Adoptium-jdk-11.0.16-linux-x64.tar.gz`，我们只需要把它加入listing.txt，再执行`download.bat`即可
