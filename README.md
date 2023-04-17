@@ -20,42 +20,21 @@
 
 ## 步骤
 
-### 把在线的文件下载到本地做成镜像服务器
-
-- 下载 listing.txt 文件中的文件（如果不想下载所有，你可以只保留需要的文件名）
-
-```cmd
-02BLOBSTORE\download.bat
-```
-
-- 手动下载`https://github.com/mendix/cf-mendix-buildpack/releases`下的各种版本的`cf-mendix-buildpack.zip`
-
-```cmd
-└── cf-mendix-buildpack
-    ├── v4.30.15
-    │   └── cf-mendix-buildpack.zip
-    └── v4.30.17
-        └── cf-mendix-buildpack.zip
-```
-
 - 启动 web 服务器
 
 ```cmd
 02BLOBSTORE\serve.bat
 ```
 
-- 设置环境变量 为 `http://{your ip}:8000/mendix/` 例如 `http://192.168.2.23:8000/mendix/`
-
 [参考文档 1 BLOBSTORE](https://github.com/mendix/cf-mendix-buildpack#using-the-buildpack-without-an-internet-connection)
 
 [参考文档 2 CF_BUILDPACK_URL](https://github.com/mendix/docker-mendix-buildpack/blob/cfd29123e7579aaec96f163deafc8304e4b649e6/Dockerfile#L16)
 
+- 配置 docker build
+
 ```cmd
-docker build --build-arg CF_BUILDPACK_URL=http://127.0.0.1:5000/github/mendix/cf-mendix-buildpack/releases/download/v4.30.17/cf-mendix-buildpack.zip
+docker build --build-arg CF_BUILDPACK_URL=http://127.0.0.1:5000/github/mendix/cf-mendix-buildpack/releases/download/${CF_BUILDPACK}/cf-mendix-buildpack.zip
 --build-arg BLOBSTORE=http://127.0.0.1:5000/mendix/
 ```
 
-# QA
-- #17 50.85 requests.exceptions.HTTPError: 404 Client Error: File not found for url: http://192.168.1.2:8000/mendix/mx-buildpack/Adoptium-jdk-11.0.16-linux-x64.tar.gz
-
-说明缺少 `mx-buildpack/Adoptium-jdk-11.0.16-linux-x64.tar.gz`，我们只需要把它加入listing.txt，再执行`download.bat`即可
+- 在有合适的网络环境下构建一次，就会下载所有依赖于本地，之后就可以离线构建了。仅当项目的 mendix 版本发生变化时，才需要重复上述步骤。
