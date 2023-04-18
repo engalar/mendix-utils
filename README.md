@@ -30,11 +30,12 @@
 
 [参考文档 2 CF_BUILDPACK_URL](https://github.com/mendix/docker-mendix-buildpack/blob/cfd29123e7579aaec96f163deafc8304e4b649e6/Dockerfile#L16)
 
+- docker-mendix-buildpack\scripts\compilation 换行符改为 linux 换行标准
+- docker-mendix-buildpack\scripts\startup 换行符改为 linux 换行标准
 - 配置 docker build
 
 ```cmd
-docker build --build-arg CF_BUILDPACK_URL=http://127.0.0.1:5000/github/mendix/cf-mendix-buildpack/releases/download/${CF_BUILDPACK}/cf-mendix-buildpack.zip
---build-arg BLOBSTORE=http://127.0.0.1:5000/mendix/
+docker build --build-arg CF_BUILDPACK_URL=http://host.docker.internal:5000/github/mendix/cf-mendix-buildpack/releases/download/v4.30.14/cf-mendix-buildpack.zip --build-arg BLOBSTORE=http://host.docker.internal:5000/mendix/ --build-arg BUILD_PATH=DiscountAutomation-main -t discount .
 ```
 
 - 在有合适的网络环境下构建一次，就会下载所有依赖于本地，之后就可以离线构建了。仅当项目的 mendix 版本发生变化时，才需要重复上述步骤。

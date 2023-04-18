@@ -32,6 +32,7 @@ def serve_file(path):
             local_path = os.path.join(LOCAL_DIR, path)
             # 如果本地文件存在，则直接返回本地文件
             if os.path.exists(local_path):
+                print("file exist")
                 return send_file(local_path)
             # 否则从上游服务器下载文件
             upstream_url = upstream_server + path[len(prefix):]
