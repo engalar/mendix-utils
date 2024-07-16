@@ -43,7 +43,7 @@ CALL :ensure_file https://cdn.mendix.com/installer/AdoptOpenJDK/OpenJDK11U-jdk_x
 CALL :ensure_file %CDN_BASE_URL%/native-builders/latest.exe , ./Dependencies/mendix_native_mobile_builder.exe
 CALL :ensure_file https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x64.exe , ./Dependencies/credist2010_x64.exe
 CALL :ensure_file https://aka.ms/vs/16/release/vc_redist.x64.exe , ./Dependencies/credist2019_x64.exe
-CALL :ensure_file https://download.visualstudio.microsoft.com/download/pr/5681bdf9-0a48-45ac-b7bf-21b7b61657aa/bbdc43bc7bf0d15b97c1a98ae2e82ec0/windowsdesktop-runtime-6.0.5-win-x64.exe , ./Dependencies/windowsdesktop-runtime-6.0.3-win-x64.exe
+CALL :ensure_file https://download.visualstudio.microsoft.com/download/pr/5681bdf9-0a48-45ac-b7bf-21b7b61657aa/bbdc43bc7bf0d15b97c1a98ae2e82ec0/windowsdesktop-runtime-6.0.5-win-x64.exe , ./Dependencies/windowsdesktop-runtime-6.0-x64.exe
 CALL :ensure_file %CDN_BASE_URL%/modelers/Mendix-%folder%-Setup.exe , ./Mendix-%folder%-Setup.exe
 
 

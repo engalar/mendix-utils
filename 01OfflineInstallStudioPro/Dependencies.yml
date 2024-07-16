@@ -1,0 +1,45 @@
+# https://docs.mendix.com/refguide/install/#offline
+# schema
+# asset name:
+#   version:
+#     - download url:rename
+dotnet:
+  10.0.0-10.10.0:
+    - https://download.visualstudio.microsoft.com/download/pr/222a065f-5671-4aed-aba9-46a94f2705e2/2bbcbd8e1c304ed1f7cef2be5afdaf43/windowsdesktop-runtime-6.0.32-win-x64.exe
+    - windowsdesktop-runtime-6.0-x64.exe
+  10.11.0-latest:
+    - https://download.visualstudio.microsoft.com/download/pr/bb581716-4cca-466e-9857-512e2371734b/5fe261422a7305171866fd7812d0976f/windowsdesktop-runtime-8.0.7-win-x64.exe
+    - windowsdesktop-runtime-8.0-x64.exe
+jdk:
+  10.0.0-latest:
+    - https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.23%2B9/OpenJDK11U-jdk_x64_windows_hotspot_11.0.23_9.msi
+    - adoptiumjdk_11_x64.msi
+vc:
+  10.0.0-latest:
+    - https://aka.ms/vs/16/release/vc_redist.x64.exe
+    - vcredist2019_x64.exe
+native_build:
+  10.0.0-latest:
+    - https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe
+    - mendix_native_mobile_builder.exe
+git:
+  10.0.0-10.1.0:
+    - https://github.com/git-for-windows/git/releases/download/v2.37.1.windows.1/Git-2.37.1-64-bit.exe
+    - git_for_windows_installer.exe
+  10.2.0-10.9:
+    - https://github.com/git-for-windows/git/releases/download/v2.41.0.windows.3/Git-2.41.0.3-64-bit.exe
+    - git_for_windows_installer.exe
+  10.10-latest:
+    - https://github.com/git-for-windows/git/releases/download/v2.43.0.windows.1/Git-2.43.0-64-bit.exe
+    - git_for_windows_installer.exe
+WebView2:
+  10.0.0-latest:
+    - https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/4ce14d46-50c8-43d4-8c49-d13652b01e50/MicrosoftEdgeWebView2RuntimeInstallerX64.exe
+    - MicrosoftEdgeWebview2Setup.exe
+gradle:
+  10.10.0-latest:
+    - https://mirrors.cloud.tencent.com/gradle/gradle-8.5-bin.zip
+    - gradle-8.5-bin.zip
+  10.0.0-10.10.0:
+    - https://mirrors.cloud.tencent.com/gradle/gradle-7.6.3-bin.zip
+    - gradle-7.6.3-bin.zip
