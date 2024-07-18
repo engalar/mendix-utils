@@ -12,8 +12,8 @@ dotnet:
     - windowsdesktop-runtime-8.0-x64.exe
 jdk:
   10.0.0-latest:
-    - https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.23%2B9/OpenJDK11U-jdk_x64_windows_hotspot_11.0.23_9.msi
-    - adoptiumjdk_11_x64.msi
+    - https://mirrors.ustc.edu.cn/adoptium/releases/temurin21-binaries/jdk-21.0.3%2B9/OpenJDK21U-jdk_x64_windows_hotspot_21.0.3_9.msi
+    - adoptiumjdk_21_x64.msi
 vc:
   10.0.0-latest:
     - https://aka.ms/vs/16/release/vc_redist.x64.exe
