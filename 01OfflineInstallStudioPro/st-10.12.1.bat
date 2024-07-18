@@ -12,7 +12,7 @@ if not exist ./Dependencies (
 CALL :ensure_file https://download.visualstudio.microsoft.com/download/pr/bb581716-4cca-466e-9857-512e2371734b/5fe261422a7305171866fd7812d0976f/windowsdesktop-runtime-8.0.7-win-x64.exe , ./Dependencies/windowsdesktop-runtime-8.0-x64.exe
 
 @REM jdk
-CALL :ensure_file https://mirrors.ustc.edu.cn/adoptium/releases/temurin21-binaries/jdk-21.0.3%2B9/OpenJDK21U-jdk_x64_windows_hotspot_21.0.3_9.msi , ./Dependencies/adoptiumjdk_21_x64.msi
+CALL :ensure_file https://mirrors.ustc.edu.cn/adoptium/releases/temurin21-binaries/jdk-21.0.3+9/OpenJDK21U-jdk_x64_windows_hotspot_21.0.3_9.msi , ./Dependencies/adoptiumjdk_21_x64.msi
 
 @REM vc
 CALL :ensure_file https://aka.ms/vs/16/release/vc_redist.x64.exe , ./Dependencies/vcredist2019_x64.exe
