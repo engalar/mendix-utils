@@ -38,4 +38,29 @@
 docker build --build-arg CF_BUILDPACK_URL=http://host.docker.internal:5000/github/mendix/cf-mendix-buildpack/releases/download/v4.30.14/cf-mendix-buildpack.zip --build-arg BLOBSTORE=http://host.docker.internal:5000/mendix/ --build-arg BUILD_PATH=DiscountAutomation-main -t discount .
 ```
 
+```
+│
+├─github
+│  └─mendix
+│      └─cf-mendix-buildpack
+│          └─releases
+│              └─download
+│                  └─v4.30.14
+│                          cf-mendix-buildpack.zip
+│
+└─mendix
+    ├─mx-buildpack
+    │  ├─java-keyutil
+    │  │      keyutil-0.4.0.jar
+    │  │
+    │  └─logs
+    │          mendix-logfilter-0.0.3.tar.gz
+    │
+    └─runtime
+            mendix-10.6.7.32997.tar.gz
+```
+```sh
+docker build --no-cache --build-arg CF_BUILDPACK_URL=file:////github/mendix/cf-mendix-buildpack/releases/download/v4.30.14/cf-mendix-buildpack.zip --build-arg BLOBSTORE=file:///mendix/ --build-arg BUILD_PATH=project -t discount .
+```
+
 - 在有合适的网络环境下构建一次，就会下载所有依赖于本地，之后就可以离线构建了。仅当项目的 mendix 版本发生变化时，才需要重复上述步骤。
