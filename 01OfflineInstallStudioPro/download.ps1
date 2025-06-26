@@ -1,4 +1,4 @@
-$mendix_version="10.12.9.49475"
+$mendix_version="10.12.17.70709"
 
 
 
