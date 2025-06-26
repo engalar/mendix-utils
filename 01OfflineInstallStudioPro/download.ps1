@@ -17,19 +17,20 @@ if (-not (Test-Path -Path $dependenciesDir)) {
   New-Item -ItemType Directory -Path $dependenciesDir | Out-Null
 }
 
-# 定义下载文件的函数
+# 定义下载文件的函数 (改进版)
 function Ensure-File {
   param (
     [string]$url,
     [string]$outputPath
   )
 
-  if (-not (Test-Path -Path $outputPath)) {
-    Write-Host "下载文件 $url 到 $outputPath"
-        (New-Object System.Net.WebClient).DownloadFile($url, $outputPath)
-  }
-  else {
-    Write-Host "已经存在 $outputPath"
+  if (-not (Test-Path $outputPath)) {
+    Write-Host "使用 Invoke-WebRequest 下载..."
+    # 这一行命令会自动处理进度条
+    Invoke-WebRequest -Uri $url -OutFile $outputPath
+    Write-Host "下载完成!" -ForegroundColor Green
+  } else {
+    Write-Host "文件已存在: $outputPath"
   }
 }
 
