@@ -59,7 +59,7 @@ downloadJDK 21
 
 
 # 下载所需文件
-Ensure-File "https://download.visualstudio.microsoft.com/download/pr/bb581716-4cca-466e-9857-512e2371734b/5fe261422a7305171866fd7812d0976f/windowsdesktop-runtime-8.0.7-win-x64.exe" "$dependenciesDir/windowsdesktop-runtime-8.0-x64.exe"
+Ensure-File "https://builds.dotnet.microsoft.com/dotnet/WindowsDesktop/8.0.15/windowsdesktop-runtime-8.0.15-win-x64.exe" "$dependenciesDir/windowsdesktop-runtime-8.0-x64.exe"
 Ensure-File "https://aka.ms/vs/16/release/vc_redist.x64.exe" "$dependenciesDir/vcredist2019_x64.exe"
 Ensure-File "https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe" "$dependenciesDir/mendix_native_mobile_builder.exe"
 Ensure-File "https://github.com/git-for-windows/git/releases/download/v2.43.0.windows.1/Git-2.43.0-64-bit.exe" "$dependenciesDir/git_for_windows_installer.exe"
